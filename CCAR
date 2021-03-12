@@ -8,43 +8,43 @@
 #include <iostream>
 #include <string>
 using namespace std;
-class CCAR {
-private:
-string nickname;
+class CCAR {   //宣告一個class方案
+private:       
+string nickname;  //設定一個私人的字串
 protected:
-int light;
+int light;        //宣告兩個被保護的變數（輪子跟燈）
 int wheel;
-public:
-CCAR() :light(2)
+public:           
+CCAR() :light(2)  //宣告燈這個數 二這個值是共用的
 {
-wheel = 5;
+wheel = 5;        //輪子等於5這個變數是共用的
 cout << "car's constructor(wheel=" << wheel << ")" << endl;
-}
-CCAR(string nickname) :light(2)
+}  //cout車子的結構
+CCAR(string nickname) :light(2)  //給予車子nickname的同時也賦予他物件
 {
 wheel = 5;
 this->nickname = nickname;
 cout << "car's constructor(nickname=" << nickname << ")" << endl;
 }
-~CCAR()
+~CCAR()  //先執行這個部分
 {
 cout << "car's destructor" << "(" << nickname << ")" << endl;
 }
-void start()
+void start() //執行cout start的動作
 {
 cout << "car's start" << endl;
 }
-void stop()
+void stop() //執行cout stop的動作
 {
 cout << "car's stop" << endl;
 }
-void turn()
+void turn()  //執行cout turn的動作
 {
 cout << "car's turn" << endl;
 }
 };
 //--------------------------
-class CBMW : public CCAR {
+class CBMW : public CCAR {  //cbmw繼承car的設定
 public:
 CBMW() { light = 4; wheel = 4; cout << "bmw's constructor" << endl; }
 ~CBMW() { cout << "bmw's destructor" << endl; }
